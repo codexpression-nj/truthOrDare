@@ -15,7 +15,6 @@ export default function App() {
     <Stack.Screen name="Categories" component={Categories} />
     <Stack.Screen name="Request" component={Request} />
     <Stack.Screen name="Results" component={Results} />
-
     </Stack.Navigator>
     </NavigationContainer>
   );
