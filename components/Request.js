@@ -1,9 +1,12 @@
 //import liraries
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
-const Request = ({navigation}) => {
+const Request = ({navigation,route}) => {
+    const pickedCategory = route.params
+    console.log(pickedCategory.categoryTitle);
+
     return (
         <View style={styles.container}>
             <Text>Request</Text>

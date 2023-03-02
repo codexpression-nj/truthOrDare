@@ -23,3 +23,7 @@ export const questions = [{
     "type": "Dare",
     "question": "Share a secret with the person sitting next to you."
 }]
+
+export const categories =[
+    "Intimate","Funny","Embarrassing","Random"
+]
