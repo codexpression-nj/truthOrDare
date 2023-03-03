@@ -25,5 +25,27 @@ export const questions = [{
 }]
 
 export const categories =[
-    "Intimate","Funny","Embarrassing","Random"
+    {
+        name:"Intimate",
+        backgroundColor:'#F56564'
+    },{
+        name:"Intimate",
+        backgroundColor:'#7452F5'
+    },
+    {
+        name:"Intimate",
+        backgroundColor:'#F6895E'
+    },{
+        name:"Intimate",
+        backgroundColor:'#26B7F4'
+    }
+    ,{
+        name:"Intimate",
+        backgroundColor:'#5661F5'
+    }
+    ,{
+        name:"Intimate",
+        backgroundColor:'#90D445'
+    }
+    // "Intimate","Funny","Embarrassing","Random","General","General"
 ]
