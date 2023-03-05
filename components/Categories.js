@@ -9,7 +9,7 @@ const Categories = ({ navigation }) => {
     const Item = ({ title }) => (
         <View style={styles.itemBox}>
             <TouchableOpacity
-            style={[styles.itemCategory, {backgroundColor:title.backgroundColor}]}
+                style={[styles.itemCategory, { backgroundColor: title.backgroundColor }]}
                 onPress={() => navigation.navigate('Request', { categoryTitle: title })}
             >
                 <Text style={styles.title}>{title.name}</Text>
@@ -22,7 +22,7 @@ const Categories = ({ navigation }) => {
             <FlatList
                 data={category}
                 renderItem={({ item }) => <Item title={item} />}
-             numColumns={2}
+                numColumns={2}
 
             />
         </View>
@@ -37,25 +37,27 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // backgroundColor: '#2c3e50',
     },
-    itemCategory:{
-        height:190,
-        width:180,
-        backgroundColor:'red',
+    itemCategory: {
+        height: 100,
+        width: 180,
+        backgroundColor: 'red',
         // justifyContent:'space-around'
-        margin:5,
-        borderRadius:10
- 
+        margin: 5,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center'
+
     },
-    itemBox:{
-//    justifyContent:'space-v',
-   alignItems:'center',
-//    width: 1,
+    itemBox: {
+        //    justifyContent:'space-v',
+        alignItems: 'center',
+        //    width: 1,
     }
     ,
-    title:{
-        color:'white',
-        margin:16,
-        fontSize:20
+    title: {
+        color: 'white',
+        margin: 16,
+        fontSize: 20
     }
 });
 
