@@ -10,7 +10,7 @@ const Categories = ({ navigation }) => {
         <View style={styles.itemBox}>
             <TouchableOpacity
                 style={[styles.itemCategory, { backgroundColor: title.backgroundColor }]}
-                onPress={() => navigation.navigate('Request', { categoryTitle: title })}
+                onPress={() => navigation.navigate('PlayerPicker', { categoryTitle: title })}
             >
                 <Text style={styles.title}>{title.name}</Text>
             </TouchableOpacity>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: '#2c3e50',
+        backgroundColor: '#191B46',
     },
     itemCategory: {
         height: 100,

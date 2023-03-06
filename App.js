@@ -6,15 +6,19 @@ import AddFriends from './components/AddFriends';
 import Categories from './components/Categories';
 import Results from './components/Results';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Prompt from './components/Prompt';
+import PlayerPicker from './components/PlayerPicker';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Categories">
-    <Stack.Screen name="AddFriends" component={AddFriends} />
+    <Stack.Navigator initialRouteName="AddFriends">
+    <Stack.Screen name="Prompt" component={Prompt} options={{headerShown:false }}/>
+    <Stack.Screen name="AddFriends" component={AddFriends} options={{headerShown:false }}/>
     <Stack.Screen name="Categories" component={Categories} />
+    <Stack.Screen name="PlayerPicker" component={PlayerPicker} />
     <Stack.Screen name="Request" component={Request} />
     <Stack.Screen name="Results" component={Results} />
     </Stack.Navigator>
