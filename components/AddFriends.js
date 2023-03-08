@@ -6,18 +6,18 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 // create a component
 let nextId = 0;
-const Item = ({title}) => (
+const Item = ({ title }) => (
     <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+        <Text style={styles.friendList}>{title}</Text>
     </View>
-  );
+);
 const AddFriends = ({ navigation }) => {
     const [name, setName] = useState('');
     const [players, setPlayers] = useState([]);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Add Players {nextId +1}</Text>
+            <Text style={styles.title}>Add Players {nextId + 1}</Text>
             <View style={styles.view}>
                 <TextInput style={styles.input} onChangeText={e => setName(e)} value={name}
                 ></TextInput>
@@ -29,26 +29,19 @@ const AddFriends = ({ navigation }) => {
                             { id: nextId++, name: name }
                         ]);
                         setName('')
-
-                    }
-                    }
-
-                >
+                    } }  >
                     <Text style={{ color: 'white' }}>Add</Text>
                 </TouchableOpacity>
-               
-          
             </View>
             <FlatList
-                    data={players}
-                    renderItem={({ item }) => <Item title={item.name} />}
-                    keyExtractor={item => item.id}
-                />
+                data={players}
+                renderItem={({ item }) => <Item title={item.name} />}
+                keyExtractor={item => item.id}
+            />
             <TouchableOpacity
                 style={styles.nextbtn}
                 onPress={() => navigation.navigate('Categories')}
             >
-                {/* <Text>Continue</Text> */}
                 <AntDesign name="arrowright" size={32} color="#F67913" />
             </TouchableOpacity>
         </View>
@@ -111,7 +104,15 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         right: 0,
-        margin: 10
+        margin: 10,
+        
+        
+    },
+    friendList: {
+        fontSize:20,
+        color:'white',
+       margin:16,
+       fontWeight:'100'
     }
 });
 
