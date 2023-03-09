@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
 const Request = ({navigation,route}) => {
-    // console.log(pickedCategory.categoryTitle);
+    
 
     return (
         <View style={styles.container}>

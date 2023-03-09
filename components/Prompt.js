@@ -8,11 +8,12 @@ const Prompt = ({navigation}) => {
         <View style={styles.container}>
             <View style={styles.view}>
             <TouchableOpacity style={styles.truthBox}
-                onPress={() => navigation.navigate('Request')}>
+                onPress={() => navigation.navigate('Request',{opt:'truth'})}>
             <Text style={styles.text}>Truth</Text>
 
             </TouchableOpacity>
-            <TouchableOpacity style={styles.truthBox}>
+            <TouchableOpacity style={styles.truthBox}
+            onPress={() => navigation.navigate('Request',{opt:'dare'})}>
             <Text style={styles.text}>Dares</Text>
 
             </TouchableOpacity>
