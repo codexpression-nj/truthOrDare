@@ -6,7 +6,10 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 const PlayerPicker = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text>PlayerPicker</Text>
+            <TouchableOpacity
+             onPress={() => navigation.navigate('Results')} 
+            style={styles.endGameBtn}><Text>End Game</Text></TouchableOpacity>
+            <Text >PlayerPicker</Text>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Prompt')} >
                 <Text>Play</Text>
@@ -23,6 +26,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#191B46',
     },
+    endGameBtn:{
+        backgroundColor:'red',
+        position:'absolute',
+        top:32,
+        right:0,
+        margin:16,
+        padding:10
+    }
 });
 
 //make this component available to the app
