@@ -11,8 +11,9 @@ const PlayerPicker = ({navigation}) => {
             style={styles.endGameBtn}><Text>End Game</Text></TouchableOpacity>
             <Text >PlayerPicker</Text>
             <TouchableOpacity
+                style={styles.playBtn}
                 onPress={() => navigation.navigate('Prompt')} >
-                <Text>Play</Text>
+                <Text style={{color:'white'}}>Play</Text>
             </TouchableOpacity>
         </View>
     );
@@ -33,6 +34,14 @@ const styles = StyleSheet.create({
         right:0,
         margin:16,
         padding:10
+    },
+    playBtn:{
+        backgroundColor:'#F67913',
+        padding: 15,
+        margin: 5,
+        borderRadius: 10,
+        alignItems: 'center',
+        width: '80%',
     }
 });
 
