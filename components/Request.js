@@ -1,7 +1,8 @@
 //import liraries
 import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 
 // create a component
 const Request = ({ navigation, route }) => {
@@ -11,11 +12,23 @@ const Request = ({ navigation, route }) => {
         <SafeAreaView style={styles.container}>
             {type.opt == 'truth'
                 ?<LinearGradient
-                    colors={['#019CF5', '#016BF7']}
+                    colors={['#019CF5', '#016BF7','#0052FF']}
                     style={styles.backg}
                 >
+                    <View  style={styles.titleView}>
                     <Text style={styles.title}>It's a truth</Text>
-                    <Text >Request</Text>
+                    <Image  source={require('../assets/emojiTruth.png')} style={styles.emoji}/>
+                    <CountdownCircleTimer
+    isPlaying
+    duration={7}
+    colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+    colorsTime={[7, 5, 2, 0]}
+  >
+    {({ remainingTime }) => <Text>{remainingTime}</Text>}
+  </CountdownCircleTimer>
+                    </View>
+
+                    <Text style={styles.questionRequest}>Request</Text>
                     <View style={styles.btns}>
                     <TouchableOpacity
                         style={styles.doneBtn}
@@ -32,11 +45,14 @@ const Request = ({ navigation, route }) => {
                     // Background Linear Gradient
                     // colors ={ type.opt ? 'magenta' : ['#019CF5', '#016BF7']}
 
-                    colors={['#FA696A', '#EB5856']}
+                    colors={['#F1959B', '#F07470','#EA4C46']}
                     style={styles.backg}
                 >
+                    <View>
                     <Text style={styles.title}>It's a dare   </Text>
-
+                    <Image  source={require('../assets/emojidare.png')} style={styles.emoji}/>
+                    </View>
+        
                     <Text style={styles.questionRequest}>Request</Text>
                     <View style={styles.btns}>
                     <TouchableOpacity
@@ -53,9 +69,6 @@ const Request = ({ navigation, route }) => {
                 </LinearGradient>
             }
         </SafeAreaView >
-
-
-
     );
 };
 
@@ -63,18 +76,14 @@ const Request = ({ navigation, route }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
     },
     questionRequest:{
         color:'white'
     },
     backg:{
         flex: 1,
-        // width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        // objectFit:'cover'
     },
     doneBtn:{
         backgroundColor:'white',
@@ -101,14 +110,24 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    titleView:{
+        alignSelf:'center',
+        // position:'absolute',
+        // top:80,
+        alignContent:'center',
+        alignItems:'center'
+    },
     title:{
         color:'white',
         fontSize:20,
-        position:'absolute',
-        top:32
     }
-
-
+    ,
+    emoji:{
+        width: 60,
+        height: 60,
+        margin:20,
+        alignItems:'center'
+    }
 });
 
 //make this component available to the app
