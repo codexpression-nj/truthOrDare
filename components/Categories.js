@@ -19,13 +19,18 @@ const Categories = ({ navigation }) => {
     );
     return (
         <View style={styles.container}>
-            <FlatList
-                data={category}
-                renderItem={({ item }) => <Item title={item} />}
-                numColumns={2}
+            <Text style={styles.topTitle}>Select Category</Text>
 
-            />
+            <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                <FlatList
+                    data={category}
+                    renderItem={({ item }) => <Item title={item} />}
+                    numColumns={2}
+
+                />
+            </View>
         </View>
+
     );
 };
 
@@ -33,9 +38,9 @@ const Categories = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+
         backgroundColor: '#191B46',
+        paddingTop: 100,
     },
     itemCategory: {
         height: 100,
@@ -58,7 +63,12 @@ const styles = StyleSheet.create({
         color: 'white',
         margin: 16,
         fontSize: 20
-    }
+    },
+    topTitle: {
+        color: 'white',
+        fontSize: 20,
+        margin: 16
+    },
 });
 
 //make this component available to the app
