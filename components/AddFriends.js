@@ -6,22 +6,31 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 // create a component
 let nextId = 0;
-const Item = ({ title }) => (
-    <View>
-        <View style={styles.item}>
-            <Text style={styles.friendList}>{title}</Text>
-            <TouchableOpacity style={{ margin: 18 }}>
-                <Ionicons name="remove-circle-outline" size={24} color="white" />
-            </TouchableOpacity>
-        </View>
-        <View style={{ borderBottomWidth: 0.5 , borderBottomColor:'white', width:'90%', alignSelf:'center'}}></View>
-    </View>
 
-);
+
+
 const AddFriends = ({ navigation }) => {
     const [name, setName] = useState('');
     const [players, setPlayers] = useState([]);
 
+    const removeFriend = (friend) =>{
+        setPlayers(players.filter(item => item !== friend));
+    }
+
+    const Item = ({ title }) => (
+        <View>
+            <View style={styles.item}>
+                <Text style={styles.friendList}>{title.name}</Text>
+                <TouchableOpacity style={{ margin: 18 }} 
+                    onPress={() => removeFriend(title)}
+                >
+                    <Ionicons name="remove-circle-outline" size={24} color="white" />
+                </TouchableOpacity>
+            </View>
+            <View style={{ borderBottomWidth: 0.5 , borderBottomColor:'white', width:'90%', alignSelf:'center'}}></View>
+        </View>
+    
+    );
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Add Players {nextId + 1}</Text>
@@ -43,7 +52,7 @@ const AddFriends = ({ navigation }) => {
             </View>
             <FlatList
                 data={players}
-                renderItem={({ item }) => <Item title={item.name} />}
+                renderItem={({ item }) => <Item title={item} />}
                 keyExtractor={item => item.id}
             />
             <TouchableOpacity

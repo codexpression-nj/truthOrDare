@@ -30,7 +30,7 @@ const Request = ({ navigation, route }) => {
                             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
                             colorsTime={[7, 5, 2, 0]}
                         >
-                            {({ remainingTime }) => <Text>{remainingTime}</Text>}
+                            {({ remainingTime }) => <Text style={{color:'white'}}>{remainingTime}</Text>}
                         </CountdownCircleTimer>
                     </View>
 
@@ -38,11 +38,11 @@ const Request = ({ navigation, route }) => {
                     <View style={styles.btns}>
                         <TouchableOpacity
                             style={styles.doneBtn}
-                            onPress={() => navigation.navigate('Results')}
+                            onPress={() => navigation.navigate('PlayerPicker')}
                         ><Text>Done</Text></TouchableOpacity>
                         <TouchableOpacity
                             style={styles.giveupBtn}
-                            onPress={() => navigation.navigate('Results')}
+                            onPress={() => navigation.navigate('PlayerPicker')}
                         >
                             <Text style={{ color: 'white' }}>Give up</Text></TouchableOpacity>
                     </View>
@@ -67,7 +67,7 @@ const Request = ({ navigation, route }) => {
                             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
                             colorsTime={[7, 5, 2, 0]}
                         >
-                            {({ remainingTime }) => <Text>{remainingTime}</Text>}
+                            {({ remainingTime }) => <Text style={{color:'white'}}>{remainingTime}</Text>}
                         </CountdownCircleTimer>
                     </View>
 
