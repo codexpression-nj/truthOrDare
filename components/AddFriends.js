@@ -13,27 +13,42 @@ const AddFriends = ({ navigation }) => {
     const [name, setName] = useState('');
     const [players, setPlayers] = useState([]);
 
-    const removeFriend = (friend) =>{
+    const removeFriend = (friend) => {
         setPlayers(players.filter(item => item !== friend));
     }
 
     const Item = ({ title }) => (
         <View>
+
             <View style={styles.item}>
+                <View style={{flexDirection:'row'}}>
+
+                    <Ionicons name="md-ellipse-sharp" size={18} color={title.color} style={{
+                       marginTop:20,marginLeft:16
+                    }} />
                 <Text style={styles.friendList}>{title.name}</Text>
-                <TouchableOpacity style={{ margin: 18 }} 
+                    
+                </View>
+
+                <TouchableOpacity style={{ margin: 18 }}
                     onPress={() => removeFriend(title)}
                 >
                     <Ionicons name="remove-circle-outline" size={24} color="white" />
                 </TouchableOpacity>
             </View>
-            <View style={{ borderBottomWidth: 0.5 , borderBottomColor:'white', width:'90%', alignSelf:'center'}}></View>
+            <View style={{ borderBottomWidth: 0.5, borderBottomColor: 'white', width: '90%', alignSelf: 'center' }}></View>
         </View>
-    
+
     );
+    const generateColor = () => {
+        const randomColor = Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, '0');
+        return `#${randomColor}`;
+    };
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Add Players {nextId + 1}</Text>
+            <Text style={styles.title}>Add Players {players.length + 1}</Text>
             <View style={styles.view}>
                 <TextInput style={styles.input} onChangeText={e => setName(e)} value={name}
                 ></TextInput>
@@ -42,7 +57,7 @@ const AddFriends = ({ navigation }) => {
                         console.log(name);
                         setPlayers([
                             ...players,
-                            { id: nextId++, name: name }
+                            { id: nextId++, name: name, color: generateColor() }
                         ]);
                         setName('')
                     }}  >
@@ -80,13 +95,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 16,
         padding: 10,
-        color: 'white'
+        color: 'white',
     },
     view: {
         width: '100%',
         alignItems: 'center',
         display: "flex",
         flexDirection: "row",
+        marginBottom:40
+        
     },
     title: {
         color: 'white',
