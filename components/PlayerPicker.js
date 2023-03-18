@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Dots from 'react-native-dots-pagination';
 
 // create a component
 const PlayerPicker = ({navigation}) => {
@@ -15,6 +16,8 @@ const PlayerPicker = ({navigation}) => {
                 onPress={() => navigation.navigate('Prompt')} >
                 <Text style={{color:'white'}}>Play</Text>
             </TouchableOpacity>
+            {/* <Dots length={3} active={0} /> */}
+
         </View>
     );
 };

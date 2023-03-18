@@ -24,7 +24,7 @@ const Request = ({ navigation, route }) => {
                         style={{height: 10,width: 10,}}
                         size={150}
                         strokeWidth={2}
-                        isGrowing={true}
+                        // isGrowing={true}
                             isPlaying
                             duration={7}
                             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
@@ -61,7 +61,8 @@ const Request = ({ navigation, route }) => {
                         style={{height: 10,width: 10,}}
                         size={150}
                         strokeWidth={2}
-                        isGrowing={true}
+                        
+                        // isGrowing={true}
                             isPlaying
                             duration={7}
                             colors={['#004777', '#F7B801', '#A30000', '#A30000']}

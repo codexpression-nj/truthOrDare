@@ -4,6 +4,8 @@ import { FlatList, TextInput, TouchableOpacity } from 'react-native';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import Dots from 'react-native-dots-pagination';
+
 // create a component
 let nextId = 0;
 
@@ -48,6 +50,8 @@ const AddFriends = ({ navigation }) => {
     };
     return (
         <View style={styles.container}>
+                  <Dots length={3} active={0} />
+
             <Text style={styles.title}>Add Players {players.length + 1}</Text>
             <View style={styles.view}>
                 <TextInput style={styles.input} onChangeText={e => setName(e)} value={name}

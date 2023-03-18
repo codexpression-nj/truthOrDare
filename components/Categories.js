@@ -2,6 +2,7 @@
 import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { categories } from '../service/data';
+import Dots from 'react-native-dots-pagination';
 
 // create a component
 const Categories = ({ navigation }) => {
@@ -19,6 +20,8 @@ const Categories = ({ navigation }) => {
     );
     return (
         <View style={styles.container}>
+                        <Dots length={3} active={1} />
+
             <Text style={styles.topTitle}>Select Category</Text>
 
             <View style={{ justifyContent: 'center', alignItems: 'center', }}>
