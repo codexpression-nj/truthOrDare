@@ -20,7 +20,6 @@ const Categories = ({ navigation }) => {
     );
     return (
         <View style={styles.container}>
-                        <Dots length={3} active={1} />
 
             <Text style={styles.topTitle}>Select Category</Text>
 
@@ -29,9 +28,13 @@ const Categories = ({ navigation }) => {
                     data={category}
                     renderItem={({ item }) => <Item title={item} />}
                     numColumns={2}
-
                 />
             </View>
+            <View style={styles.dot}>
+            <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={1} />
+
+            </View>
+
         </View>
 
     );
@@ -60,6 +63,14 @@ const styles = StyleSheet.create({
         //    justifyContent:'space-v',
         alignItems: 'center',
         //    width: 1,
+    },
+    dot:{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right:0,
+        margin: 10,
+     
     }
     ,
     title: {

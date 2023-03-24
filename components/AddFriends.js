@@ -21,17 +21,13 @@ const AddFriends = ({ navigation }) => {
 
     const Item = ({ title }) => (
         <View>
-
             <View style={styles.item}>
                 <View style={{flexDirection:'row'}}>
-
                     <Ionicons name="md-ellipse-sharp" size={18} color={title.color} style={{
                        marginTop:20,marginLeft:16
                     }} />
                 <Text style={styles.friendList}>{title.name}</Text>
-                    
                 </View>
-
                 <TouchableOpacity style={{ margin: 18 }}
                     onPress={() => removeFriend(title)}
                 >
@@ -50,7 +46,7 @@ const AddFriends = ({ navigation }) => {
     };
     return (
         <View style={styles.container}>
-                  <Dots length={3} active={0} />
+                
 
             <Text style={styles.title}>Add Players {players.length + 1}</Text>
             <View style={styles.view}>
@@ -74,12 +70,17 @@ const AddFriends = ({ navigation }) => {
                 renderItem={({ item }) => <Item title={item} />}
                 keyExtractor={item => item.id}
             />
+
             <TouchableOpacity
                 style={styles.nextbtn}
                 onPress={() => navigation.navigate('Categories')}
             >
                 <AntDesign name="arrowright" size={32} color="#F67913" />
             </TouchableOpacity>
+            <View style={styles.dot}>
+            <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={0} />
+
+            </View>
         </View>
     );
 };
@@ -135,6 +136,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         right: 0,
+        margin: 10,
+    },
+    dot:{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right:0,
         margin: 10,
     },
     friendList: {

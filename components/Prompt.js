@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Dots from 'react-native-dots-pagination';
 
 // create a component
 const Prompt = ({navigation}) => {
@@ -18,7 +19,10 @@ const Prompt = ({navigation}) => {
 
             </TouchableOpacity>
             </View>
-           
+            <View style={styles.dot}>
+            <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={3} />
+
+            </View>
         </View>
     );
 };
@@ -30,6 +34,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#191B46',
+    },
+    dot:{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        margin: 10,
     },
     truthBox:{
         width:'45%',

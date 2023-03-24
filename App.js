@@ -18,7 +18,7 @@ export default function App() {
     <Stack.Screen name="Prompt" component={Prompt} options={{headerShown:false}}/>
     <Stack.Screen name="AddFriends" component={AddFriends} options={{headerShown:false}}/>
     <Stack.Screen name="Categories" component={Categories} options={{headerShown:false}}/>
-    <Stack.Screen name="PlayerPicker" component={PlayerPicker} />
+    <Stack.Screen name="PlayerPicker" component={PlayerPicker}  options={{headerShown:false}}/>
     <Stack.Screen name="Request" component={Request} options={{headerShown:false}} />
     <Stack.Screen name="Results" component={Results} />
     </Stack.Navigator>

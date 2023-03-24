@@ -9,15 +9,18 @@ const PlayerPicker = ({navigation}) => {
         <View style={styles.container}>
             <TouchableOpacity
              onPress={() => navigation.navigate('Results')} 
-            style={styles.endGameBtn}><Text>End Game</Text></TouchableOpacity>
+            style={styles.endGameBtn}><Text>End Game</Text>
+            </TouchableOpacity>
             <Text >PlayerPicker</Text>
             <TouchableOpacity
                 style={styles.playBtn}
                 onPress={() => navigation.navigate('Prompt')} >
                 <Text style={{color:'white'}}>Play</Text>
             </TouchableOpacity>
-            {/* <Dots length={3} active={0} /> */}
+            <View style={styles.dot}>
+            <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={2} />
 
+            </View>
         </View>
     );
 };
@@ -45,7 +48,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
         width: '80%',
-    }
+    },
+    dot:{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right:0,
+    },
 });
 
 //make this component available to the app
