@@ -9,8 +9,6 @@ import Dots from 'react-native-dots-pagination';
 // create a component
 let nextId = 0;
 
-
-
 const AddFriends = ({ navigation }) => {
     const [name, setName] = useState('');
     const [players, setPlayers] = useState([]);
@@ -46,7 +44,13 @@ const AddFriends = ({ navigation }) => {
     };
     return (
         <View style={styles.container}>
-                
+                   <TouchableOpacity
+                style={styles.nextbtn}
+                onPress={() => navigation.navigate('Results')
+            }
+            >
+                <AntDesign name="arrowright" size={32} color="#F67913" />
+            </TouchableOpacity>
 
             <Text style={styles.title}>Add Players {players.length + 1}</Text>
             <View style={styles.view}>
@@ -55,10 +59,12 @@ const AddFriends = ({ navigation }) => {
                 <TouchableOpacity style={styles.addButton}
                     onPress={() => {
                         console.log(name);
+
                         setPlayers([
                             ...players,
                             { id: nextId++, name: name, color: generateColor() }
                         ]);
+                        
                         setName('')
                     }}  >
                     <Text style={{ color: 'white' }}>Add</Text>
@@ -71,16 +77,19 @@ const AddFriends = ({ navigation }) => {
                 keyExtractor={item => item.id}
             />
 
-            <TouchableOpacity
-                style={styles.nextbtn}
-                onPress={() => navigation.navigate('Categories')}
-            >
-                <AntDesign name="arrowright" size={32} color="#F67913" />
-            </TouchableOpacity>
+         
+
             <View style={styles.dot}>
             <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={0} />
 
             </View>
+            <TouchableOpacity
+                style={styles.nextbtn}
+                onPress={() => navigation.navigate('Categories')
+            }
+            >
+                <AntDesign name="arrowright" size={32} color="#F67913" />
+            </TouchableOpacity>
         </View>
     );
 };
