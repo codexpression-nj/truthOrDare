@@ -79,10 +79,10 @@ const AddFriends = ({ navigation }) => {
 
          
 
-            <View style={styles.dot}>
+            {/* <View style={styles.dot}>
             <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={0} />
 
-            </View>
+            </View> */}
             <TouchableOpacity
                 style={styles.nextbtn}
                 onPress={() => navigation.navigate('Categories')

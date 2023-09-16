@@ -5,22 +5,24 @@ import Dots from 'react-native-dots-pagination';
 
 // create a component
 const PlayerPicker = ({navigation}) => {
+    
     return (
         <View style={styles.container}>
             <TouchableOpacity
              onPress={() => navigation.navigate('Results')} 
-            style={styles.endGameBtn}><Text>End Game</Text>
+            style={styles.endGameBtn}><Text style={{color:'red'}}> End Game</Text>
             </TouchableOpacity>
-            <Text >PlayerPicker</Text>
+
+            <Text style={{color:'white'}}>PlayerPicker</Text>
             <TouchableOpacity
                 style={styles.playBtn}
                 onPress={() => navigation.navigate('Prompt')} >
                 <Text style={{color:'white'}}>Play</Text>
             </TouchableOpacity>
-            <View style={styles.dot}>
+            {/* <View style={styles.dot}>
             <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={2} />
 
-            </View>
+            </View> */}
         </View>
     );
 };
@@ -34,12 +36,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#191B46',
     },
     endGameBtn:{
-        backgroundColor:'red',
+        // backgroundColor:'red',
         position:'absolute',
         top:32,
         right:0,
         margin:16,
-        padding:10
+        padding:10,
+        borderWidth:1,
+        borderColor:'red'
     },
     playBtn:{
         backgroundColor:'#F67913',

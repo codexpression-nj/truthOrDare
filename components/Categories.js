@@ -30,10 +30,10 @@ const Categories = ({ navigation }) => {
                     numColumns={2}
                 />
             </View>
-            <View style={styles.dot}>
+            {/* <View style={styles.dot}>
             <Dots activeDotHeight={20} width={400}  activeColor={'#F67913'}  length={4} active={1} />
 
-            </View>
+            </View> */}
 
         </View>
 

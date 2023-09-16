@@ -87,3 +87,15 @@ export const categories =[
     }
     // "Intimate","Funny","Embarrassing","Random","General","General"
 ]
+
+export const players =[
+   {
+    name:'my name '
+   },
+   {
+    name:'mice '
+   },
+   {
+    name:'catt'
+   }
+]
